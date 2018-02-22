@@ -3,6 +3,10 @@ const compression = require('compression');
 const path = require('path');
 const PORT = process.env.PORT || 5000;
 
+for (let key in process.env) {
+    console.log(key + ': ' + process.env[key]);
+}
+
 express()
   .use(express.static(path.join(__dirname, 'build')))
   .use(compression())

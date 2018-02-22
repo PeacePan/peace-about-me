@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": "^6.11.4"
+    "node": "^6.11.4",
+    "npm": "^5.6.0"
   },
   "scripts": {
     "start": "npm run build && node ./http-server.js",
