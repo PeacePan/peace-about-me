@@ -2,15 +2,18 @@
   "name": "peace-about-me",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "^6.11.4"
+  },
   "scripts": {
+    "start": "npm run build && node ./http-server.js",
     "build-css": "node-sass-chokidar src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
-    "start-js": "react-scripts start",
-    "start": "npm-run-all -p watch-css start-js",
+    "serve": "npm-run-all -p watch-css serve-js",
+    "serve-js": "react-scripts start",
     "build-js": "react-scripts build",
     "build": "npm-run-all build-css build-js",
-    "test": "react-scripts test --env=jsdom",
-    "serve": "npm run build && node ./http-server.js"
+    "test": "react-scripts test --env=jsdom"
   },
   "dependencies": {
     "compression": "1.7.2",
