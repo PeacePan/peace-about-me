@@ -1,5 +1,8 @@
+@import '../../scss/variable.scss';
+
 .page-home {
     display: inherit;
+    justify-content: flex-end;
     position: relative;
 
     &:after {
@@ -10,47 +13,43 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-        background-image: url('../../resources/image/background.jpg');
+        background: linear-gradient(to bottom,
+            $theme-main-color 0%,
+            #bbb 60%,
+            #888 90%,
+            #eee 100%
+        );
         opacity: .8;
         z-index: -1;
     }
 
-    .side-panel {
-        margin: 2.5%;
-        padding: 2.5%;
-        background-color: aliceblue;
-        opacity: .7;
-
-        &.left-side {
-            width: 50%;
-            height: 80%;
-        }
-
-        &.right-side {
-            width: 50%;
-            height: 25%;
-        }
+    .intro-title {
+        margin: .5rem 0;
     }
-    .skill-overview,
-    .job-experience {
-        padding: 2.5%;
 
-        .content {
-            height: 100%;
-        }
+    .side-panel {
+        width: 50%;
+        height: 75%;
+        margin: 2.5%;
+    }
+
+    .panel-content {
+        height: 100%;
     }
 
     .skill-overview {
-        height: 35%;
     }
 
     .job-experience {
-        height: 60%;
     }
 
-    .introduce-myself {
+    .person-container {
+        display: inherit;
+        padding-right: 15%;
 
+        img {
+            margin-top: 25%;
+            align-self: center;
+        }
     }
 }

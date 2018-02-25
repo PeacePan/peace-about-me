@@ -1,3 +1,5 @@
+@import './scss/variable.scss';
+
 html, body,
 #root,
 .route-wrapper,
@@ -15,4 +17,9 @@ body {
 .route-wrapper {
     display: flex;
     flex-direction: column;
+    overflow: auto;
+}
+
+.page {
+    padding-top: $header-min-height;
 }

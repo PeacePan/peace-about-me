@@ -15,7 +15,7 @@ const style = {
         backgroundColor: '#ddd'
     },
     toolbar: {
-        justifyContent: 'flex-end'
+        paddingLeft: '7.5%'
     }
 };
 
@@ -32,21 +32,19 @@ class Header extends Component {
         const { value } = this.state;
 
         return (
-            <div className="nav-header">
-                <AppBar position="static" color="inherit" style={style.header}>
-                    <Toolbar style={style.toolbar}>
-                        <div className="header-logo">
-                            <FontAwesomeIcon icon={["fab", "earlybirds"]} size="2x" />
-                        </div>
-                        <Typography variant="title" color="inherit">
-                            <Tabs value={value} onChange={this.handleChange}>
-                                <Tab label="Home" component={Link} to="/"></Tab>
-                                <Tab label="Awards" component={Link} to="/awards"></Tab>
-                            </Tabs>
-                        </Typography>
-                    </Toolbar>
-                </AppBar>
-            </div>
+            <AppBar position="fixed" color="inherit" style={style.header}>
+                <Toolbar style={style.toolbar}>
+                    <div className="header-logo">
+                        <FontAwesomeIcon icon={["fab", "earlybirds"]} size="2x" />
+                    </div>
+                    <Typography variant="title" color="inherit">
+                        <Tabs value={value} onChange={this.handleChange}>
+                            <Tab label="Home" component={Link} to="/"></Tab>
+                            <Tab label="Awards" component={Link} to="/awards"></Tab>
+                        </Tabs>
+                    </Typography>
+                </Toolbar>
+            </AppBar>
         );
     }
 }
