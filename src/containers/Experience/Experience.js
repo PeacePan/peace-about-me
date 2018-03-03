@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-import './Home.css';
+import './Experience.css';
 
-class Home extends Component {
+class Experience extends React.Component {
     render() {
         return (
             <div className="page page-home">
@@ -48,11 +48,11 @@ class Home extends Component {
                 </div>
 
                 <div className="person-container">
-                    <img src="media/image/person.png" alt="This is me"/>
+                    <img src="image/person.png" alt="This is me"/>
                 </div>
             </div>
         );
     }
 }
 
-export default Home;
+export default Experience;

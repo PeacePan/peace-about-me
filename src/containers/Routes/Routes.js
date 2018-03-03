@@ -1,22 +1,16 @@
 import React, { Component } from 'react';
 
-import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Redirect } from 'react-router-dom';
-import { routerReducer } from 'react-router-redux';
 
-import Header from '../../partials/header/Header';
-import Home from '../../pages/home/Home';
-import Awards from '../../pages/awards/Awards';
-
-const store = createStore(
-    combineReducers({
-        router: routerReducer
-    })
-);
+import mainStore from '../../redux/mainStore';
+import Header from '../../components/Header/Header';
+import Home from '../../containers/Home/Home';
+import Awards from '../../containers/Awards/Awards';
 
 const routeMatch = {
     '/': Home,
+    '/home': Home,
     '/awards': Awards
 };
 
@@ -24,15 +18,15 @@ class Routes extends Component {
     render() {
         let shouldRedirect = () => {
             let routePath = window.location.pathname;
-            return !!routeMatch[routePath];
+            return !routeMatch[routePath];
         };
 
         return (
-            <Provider store={store}>
+            <Provider store={mainStore}>
                 <BrowserRouter>
                 <div className="route-wrapper">
                     <Route component={Header}></Route>
-                    <Route path="/*" render={() => !shouldRedirect() && (<Redirect to="/" />)}></Route>
+                    <Route path="/*" render={() => shouldRedirect() && (<Redirect to="/home" />)}></Route>
                     <Route exact path="/" component={Home}></Route>
                     <Route path="/awards" component={Awards}></Route>
                 </div>

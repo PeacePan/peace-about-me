@@ -1,7 +1,7 @@
 import { initializeApp } from 'firebase';
-import firebaseConfig from '../configs/firebase/firebase-config';
+import firebaseConfig from '../configs/firebase';
 
-class FirebaseManager {
+class FirebaseHelper {
     constructor() {
         this.app = initializeApp(firebaseConfig);
         this.auth = this.app.auth();
@@ -17,4 +17,4 @@ class FirebaseManager {
     }
 }
 
-export default new FirebaseManager();
+export default new FirebaseHelper();

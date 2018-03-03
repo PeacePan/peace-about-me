@@ -1,0 +1,46 @@
+@import '../../styles/_variable.scss';
+
+.nav-header {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: $header-min-height;
+    background-color: transparent;
+    color: #bbb;
+
+    .header-item {
+        display: inherit;
+        align-items: center;
+        height: 100%;
+    }
+
+    .header-logo {
+        justify-content: center;
+        width: 5rem;
+        background-color: #fff;
+        color: #000;
+    }
+
+    .header-toolbar {
+        justify-content: flex-end;
+        width: calc(100% - 5rem);
+        padding: 0 1rem;
+    }
+
+    .header-tab {
+        display: inherit;
+        align-items: center;
+        height: 100%;
+        padding: 0 1rem;
+        cursor: pointer;
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        &.active {
+            background-color: rgba(#fff, .25);
+        }
+    }
+}
