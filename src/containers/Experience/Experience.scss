@@ -1,48 +1,67 @@
 @import '../../styles/_variable.scss';
 
-.page-home {
-    display: inherit;
-    justify-content: flex-end;
-    position: relative;
+.page-experience {
+    flex-direction: column;
 
-    &:after {
-        background: linear-gradient(to bottom,
-            $theme-primary-color 0%,
-            $theme-primary-color 50%,
-            #888 85%,
-            #eee 100%
-        );
-    }
+    .overview {
+        display: inherit;
+        justify-content: center;
 
-    .intro-title {
-        margin: .5rem 0;
+        &.job {
+            min-height: 50%;
+        }
+
+        &.skill {
+            padding: 0 10%;
+        }
     }
 
     .side-panel {
-        width: 50%;
-        height: 75%;
-        margin: 2.5%;
+        padding: 1rem;
     }
 
     .panel-content {
+        width: 100%;
         height: 100%;
-    }
-
-    .skill-overview {
-    }
-
-    .job-experience {
     }
 
     .person-container {
         display: inherit;
+        align-items: flex-start;
         padding-right: 10%;
+        width: 75%;
 
         img {
-            width: 192px;
+            width: 100%;
             margin-top: 4rem;
-            align-self: center;
             // filter: grayscale(100%);
         }
     }
+
+    .skill-container {
+        .nested {
+            margin-left: 1rem;
+        }
+
+        .skill-percent {
+            display: block;
+            text-align: center;
+            border-top-right-radius: .5rem;
+            border-bottom-right-radius: .5rem;
+
+            transform: scaleX(0);
+            transform-origin: left;
+
+            animation-delay: 200ms;
+            animation-fill-mode: both;
+            animation-iteration-count: 1;
+            animation-duration: 300ms;
+            animation-name: percentGrow;
+        }
+    }
+}
+
+@keyframes percentGrow {
+    0% { transform: scaleX(0); }
+    100% { transform: scaleX(1); }
 }
