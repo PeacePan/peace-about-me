@@ -6,6 +6,13 @@
     align-items: center;
     color: rgba(#fff, .8);
 
+    &:after {
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        background-image: url('/image/bg-desktop.jpg');
+    }
+
     .greeting-wrapper {
         text-align: center;
         padding: 1rem;
@@ -33,12 +40,10 @@
         background-color: #fff;
         color: #000;
         font-weight: bold;
-        border: .25rem solid #fff;
         border-radius: 2rem;
 
         &:hover {
             background-color: #888;
-            border-color: #888;
             cursor: pointer;
         }
     }

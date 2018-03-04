@@ -1,0 +1,13 @@
+.route-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: auto;
+
+    background: linear-gradient(to bottom,
+        #fff 0%,
+        #aaa 30%,
+        #888 60%,
+        #ddd 80%
+    );
+}

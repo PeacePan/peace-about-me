@@ -1,46 +1,27 @@
 @import '../../styles/_variable.scss';
 
-.nav-header {
-    position: fixed;
-    display: flex;
-    width: 100%;
-    height: $header-min-height;
-    background-color: transparent;
-    color: #bbb;
+$_header-bg-color: #000;
+$_header-font-color: #bbb;
 
-    .header-item {
-        display: inherit;
-        align-items: center;
-        height: 100%;
+.over-write.nav-header {
+    background-color:$_header-bg-color;
+    color: $_header-font-color;
+
+    .nav-content {
+        margin-left: auto;
     }
 
-    .header-logo {
-        justify-content: center;
-        width: 5rem;
-        background-color: #fff;
-        color: #000;
-    }
+    .nav-button {
+        text-transform: none;
 
-    .header-toolbar {
-        justify-content: flex-end;
-        width: calc(100% - 5rem);
-        padding: 0 1rem;
-    }
-
-    .header-tab {
-        display: inherit;
-        align-items: center;
-        height: 100%;
-        padding: 0 1rem;
-        cursor: pointer;
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
+        &:hover,
         &.active {
             background-color: rgba(#fff, .25);
+        }
+
+        a {
+            color: $_header-font-color;
+            text-decoration: none;
         }
     }
 }
